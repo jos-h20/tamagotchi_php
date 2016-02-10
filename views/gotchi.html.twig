@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Tamagotchi</title>
+</head>
+<body>
+    <h1>Take Care of Your Tamagotchi</h1>
+
+    {% if attributes is not empty %}
+        <p>Your Tamagotchi</p>
+        <ul>
+            {% for attribute in attributes %}
+                <h2> {{ attribute.getName }} </h2>
+
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action='/name' method='post'>
+        <label for='name'>Gotchi Name:</label>
+        <input id='name' name='name' type='text'></br>
+
+        <button type='submit'>Add Gotchi</button>
+    </form>
+    <form action='/delete_gotchis' method='post'>
+        <button type='submit'>Kill Gotchis</button>
+    </form>
+</body>
+</html>
